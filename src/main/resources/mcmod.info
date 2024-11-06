@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lionking",
+  "name": "Lion King",
+  "description": "Brings Lion king to minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/adventurekraft",
+  "updateUrl": "",
+  "authorList": ["RedRoseWarrior1"],
+  "credits": "Mevans for making the 1.6.4 and below versions",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
