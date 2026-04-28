@@ -13,9 +13,10 @@ import net.minecraft.entity.player.*;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.inventory.*;
 import net.minecraft.item.*;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.crafting.*;
 import net.minecraft.nbt.*;
-import net.minecraft.network.packet.*;
 import net.minecraft.pathfinding.*;
 import net.minecraft.potion.*;
 import net.minecraft.server.*;
@@ -38,6 +39,7 @@ import lionking.common.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.*;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.*;
 import net.minecraftforge.event.entity.*;
 import net.minecraftforge.event.entity.living.*;
@@ -49,9 +51,8 @@ import cpw.mods.fml.common.registry.EntityRegistry.*;
 import cpw.mods.fml.common.network.*;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(modid = "lionking", version = "v1.14 for Minecraft 1.6.4")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
-public class mod_LionKing implements ICraftingHandler, IFuelHandler, IPickupNotifier, IWorldGenerator
+@Mod(modid = "lionking", version = "v1.15 for Minecraft 1.7.10")
+public class mod_LionKing implements IFuelHandler, IWorldGenerator
 {
 	@SidedProxy(clientSide = "lionking.client.LKClientProxy", serverSide = "lionking.common.LKCommonProxy")
 	public static LKCommonProxy proxy;
@@ -75,17 +76,18 @@ public class mod_LionKing implements ICraftingHandler, IFuelHandler, IPickupNoti
 	public static boolean randomBooths;
 	public static int lkMusicChance;
 	
-	private static EnumToolMaterial toolPridestone = EnumHelper.addToolMaterial("LK_PRIDESTONE", 1, 150, 4.0F, 1, 5);
-	private static EnumToolMaterial toolSilver = EnumHelper.addToolMaterial("LK_SILVER", 2, 490, 6.0F, 2, 16);
-	private static EnumToolMaterial toolPeacock = EnumHelper.addToolMaterial("LK_PEACOCK", 3, 1475, 8.0F, 3, 9);
-	private static EnumToolMaterial toolKivulite = EnumHelper.addToolMaterial("LK_KIVULITE", 2, 70, 6.0F, 0, 3);
-	private static EnumToolMaterial toolCorrupt = EnumHelper.addToolMaterial("LK_CORRUPT_PRIDESTONE", 1, 120, 5.5F, 0, 7);
 
-    private static EnumArmorMaterial armorSilver = EnumHelper.addArmorMaterial("LK_SILVER", 19, new int[] {2, 7, 5, 2}, 16);
-    private static EnumArmorMaterial armorGemsbok = EnumHelper.addArmorMaterial("LK_GEMSBOK", 8, new int[] {2, 5, 4, 1}, 8);
-    private static EnumArmorMaterial armorPeacock = EnumHelper.addArmorMaterial("LK_PEACOCK", 31, new int[] {3, 8, 6, 3}, 9);
-	public static EnumArmorMaterial armorSuit = EnumHelper.addArmorMaterial("LK_TICKET_LION_SUIT", 0, new int[] {0, 0, 0, 0}, 0);
-	public static EnumArmorMaterial armorOutlandsHelm = EnumHelper.addArmorMaterial("LK_OUTLANDISH_HELM", 12, new int[] {2, 6, 5, 2}, 0);
+	private static ToolMaterial toolPridestone = EnumHelper.addToolMaterial("LK_PRIDESTONE", 1, 150, 4.0F, 1, 5);
+	private static ToolMaterial toolSilver = EnumHelper.addToolMaterial("LK_SILVER", 2, 490, 6.0F, 2, 16);
+	private static ToolMaterial toolPeacock = EnumHelper.addToolMaterial("LK_PEACOCK", 3, 1475, 8.0F, 3, 9);
+	private static ToolMaterial toolKivulite = EnumHelper.addToolMaterial("LK_KIVULITE", 2, 70, 6.0F, 0, 3);
+	private static ToolMaterial toolCorrupt = EnumHelper.addToolMaterial("LK_CORRUPT_PRIDESTONE", 1, 120, 5.5F, 0, 7);
+
+    private static ArmorMaterial armorSilver = EnumHelper.addArmorMaterial("LK_SILVER", 19, new int[] {2, 7, 5, 2}, 16);
+    private static ArmorMaterial armorGemsbok = EnumHelper.addArmorMaterial("LK_GEMSBOK", 8, new int[] {2, 5, 4, 1}, 8);
+    private static ArmorMaterial armorPeacock = EnumHelper.addArmorMaterial("LK_PEACOCK", 31, new int[] {3, 8, 6, 3}, 9);
+	public static ArmorMaterial armorSuit = EnumHelper.addArmorMaterial("LK_TICKET_LION_SUIT", 0, new int[] {0, 0, 0, 0}, 0);
+	public static ArmorMaterial armorOutlandsHelm = EnumHelper.addArmorMaterial("LK_OUTLANDISH_HELM", 12, new int[] {2, 6, 5, 2}, 0);
 
 	public static Block lionPortalFrame;
 	public static Block lionPortal;

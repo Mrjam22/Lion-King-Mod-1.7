@@ -6,7 +6,7 @@ public class LKItem extends Item
 {
     public LKItem(int i)
     {
-        super(i);
+        super();
 		setCreativeTab(LKCreativeTabs.tabMisc);
     }
 }
