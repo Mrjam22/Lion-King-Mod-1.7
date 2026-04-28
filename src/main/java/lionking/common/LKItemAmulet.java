@@ -30,9 +30,9 @@ import net.minecraft.world.storage.*;
 
 public class LKItemAmulet extends LKItemArmor
 {
-    public LKItemAmulet(int i)
+    public LKItemAmulet()
     {
-        super(i,mod_LionKing.armorSuit, 0, 1);
+        super(mod_LionKing.armorSuit, 0, 1);
 		setMaxDamage(0);
 		setMaxStackSize(1);
 		setCreativeTab(LKCreativeTabs.tabQuest);

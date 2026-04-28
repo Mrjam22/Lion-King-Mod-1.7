@@ -30,7 +30,7 @@ import net.minecraft.world.storage.*;
 
 public class LKItemArmor extends ItemArmor
 {
-    public LKItemArmor(int i, ArmorMaterial enumarmormaterial, int j, int k)
+    public LKItemArmor(ArmorMaterial enumarmormaterial, int j, int k)
     {
         super(enumarmormaterial, j, k);
 		setCreativeTab(LKCreativeTabs.tabCombat);
